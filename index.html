@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOUVEAUX PROJET JAHO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>1 CHAMPS TYPE TEXTERA ET UN BOUTON</h1>
+    <section id="experience">
+        <form>
+            <div class="row">
+    <div class="col-md-16">
+        <label for="message">Texte <span class="blue">*</span></label> 
+        <textarea id="message" name="message" class="form-control" placeholder=" votre texte" rows="6"></textarea>
+        <p class="comments"></p>
+    </div>
+    <div class="col-md-16">
+                            
+        <input type="submit" id="afficher"class="button1" value="ENVOYER" onclick={Message()}>
+        <script type="text/javascript">
+            //je crée une fonction Message pour recuperer le mots dans la case que l'utilisateur va Tapez
+            function Message() {
+                var textArea = document.getElementById('message').value;
+                var nombre = 0; 
+var split = textArea.split(' '); 
+for (var i = 0; i < split.length; i++)//j'utilise la fonction split pour prendre en compte les espace aussi
+{ 
+if (split[i] != "") 
+{ 
+nombre += 1; 
+}  
+document.getElementById("message").innerHTML = nombre; 
+} 
+function nbre_caracteres(lettre,mot)//une fonction pour compter les e qui prend en paramettre lettre et mots
+    {
+        mot = mot.split('');
+        var nbre_de_fois_trouve = 0;
+        for(var i = 0; i < mot.length; i++)
+        {
+            if(lettre == mot[i])
+                nbre_de_fois_trouve++;
+        }
+        return nbre_de_fois_trouve;
+    }
+    document.write(nbre_caracteres('e','camembert'));
+                alert("Le mots: "+textArea + " mesure : " + textArea.length + " octets")
+                alert("vous avez écrit:  "+nombre+"  mots")
+                alert("le nombre des e contenue dans la phrase est:"+nbre_de_fois_trouve)
+
+              
+               
+            }
+            </script>
+    </div> 
+    
+    </div>
+    </form>
+    
+    </section>
+    <script src="js.js"></script>
+</body>
+</html>
